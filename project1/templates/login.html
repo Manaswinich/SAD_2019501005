@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My login page</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <form method="POST">
+        <div class="container">
+            <h1 id="heading">Login</h1>
+            <p id="para">Please fill in this form to login.</p>
+            <hr>
+            <label for="usr"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="usr" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Password" name="psw" required>
+    </form>
+
+    <input type="submit" class="registerbtn" onclick="window.location.href='http://127.0.0.1:5000/main'">
+    <input type="reset" class="registerbtn">
+
+    </div>
+</body>
+
+</html>

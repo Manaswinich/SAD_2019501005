@@ -3,12 +3,26 @@
 
 <head>
     <title>My registration page</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 
 <body>
-    <h1> {%block heading %}Is the registration done..?{%endblock%}</h1>
+    <h1> {%block heading %}Hello,{{fname}}!,Your registration is done!{%endblock%}</h1>
     {%block body%}
-    Hello,{{fname}}!,Your registration is done!
+    <h3>Your credentials and details are as follows:</h3>
+    <ul>
+        <li>First Name:{{fname}}</li>
+        <li>Last Name:{{lname}}</li>
+        <li>Gender:{{gender}}</li>
+        <li>Birthday:{{birthday}}</li>
+        <li>Email Id:{{email}}</li>
+
+
+    </ul>
+    <a href="{{url_for('login')}}">Go to Login..</a>
     {%endblock%}
 </body>
 

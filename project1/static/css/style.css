@@ -1,8 +1,9 @@
-#heading {
+.heading {
   font-family: serif;
   font-style: oblique;
   font-size: 40px;
   font-weight: bold;
+  text-align: center;
 }
 
 #para {
@@ -10,8 +11,16 @@
   font-style: arial;
 }
 
+.ss {
+  font-family: serif;
+  text-align: center;
+}
+
 body {
   background-color: #ecd6dd;
+  background-image: url("images/b.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
@@ -23,7 +32,7 @@ body {
           box-sizing: border-box;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=email] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -32,7 +41,26 @@ input[type=text], input[type=password] {
   background: #f1f1f1;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+input[type=text]:focus, input[type=password]:focus input[type=email]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mail {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
   background-color: #ddd;
   outline: none;
 }
@@ -40,6 +68,12 @@ input[type=text]:focus, input[type=password]:focus {
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
+}
+
+.d {
+  text-align: center;
+  font-size: larger;
+  font-style: arial;
 }
 
 .registerbtn {
@@ -58,6 +92,64 @@ hr {
 }
 
 .dv {
+  display: inline;
+  width: 100%;
+}
+
+.lis {
+  list-style-type: none;
+  margin: 0 px;
+  padding: 0 px;
+  text-align: center;
+  background-color: #e6cacf;
+  -webkit-transition: background-color .5s;
+  transition: background-color .5s;
+}
+
+.lis :hover {
+  background-color: #f0f3f5;
+  color: #790255;
+}
+
+.lis li {
+  width: 50 px;
   display: inline-block;
+  padding: 8px;
+}
+
+.lis li a {
+  display: inline;
+  color: white;
+  text-align: center;
+  padding: 70 px 70 px;
+  text-decoration: blink;
+}
+
+#tab {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+#tab td, #tab th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#tab tr :hover {
+  background-color: #e5ebe6;
+  color: #790255;
+}
+
+#tab th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #e6cacf;
+  color: white;
+  -webkit-transition: background-color .5s;
+  transition: background-color .5s;
 }
 /*# sourceMappingURL=style.css.map */

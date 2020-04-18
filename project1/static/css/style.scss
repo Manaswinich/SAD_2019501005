@@ -1,16 +1,27 @@
 
-#heading{
+.heading{
   font-family:serif;
     font-style: oblique;
     font-size:40px;
     font-weight: bold;
+    text-align:center;
 }
 #para{
     font-size: larger;
     font-style: arial;
 }
+
+.ss{
+    font-family:serif;
+    text-align:center;
+}
+
+
 body{
      background-color: rgb(236, 214, 221);
+     background-image: url("images/b.jpg");
+       background-repeat: no-repeat;
+    background-size: cover;
 }
 .container {
     width: 300px;
@@ -37,6 +48,14 @@ input[type=text]:focus, input[type=password]:focus input[type=email]:focus{
   outline: none;
 }
 
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
 .mail{
   width: 100%;
   padding: 15px;
@@ -51,7 +70,11 @@ hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
-
+.d{
+  text-align: center;
+  font-size: larger;
+    font-style: arial;
+}
 
 .registerbtn {
   background-color: rgb(230, 202, 207);
@@ -69,6 +92,64 @@ hr {
 }
 
 .dv{
-    display: inline-block;
+    display: inline;
+    width: 100%;
 }
 
+.lis{
+    list-style-type: none;
+    margin: 0 px;
+    padding: 0 px;
+    // overflow: hidden;
+    text-align: center;
+    background-color: rgb(230, 202, 207);
+    transition: background-color .5s;
+:hover{
+                background-color: rgb(240, 243, 245);
+                color:  rgb(121, 2, 85);
+     }
+
+li {
+    width: 50 px;
+    // float: left];
+    display: inline-block;
+    // border-right:1px solid #bbb;
+    padding: 8px;
+:last-child {
+//   border-right: none;
+}
+a {
+                display: inline;
+                color: white;
+                text-align: center;
+                padding: 70 px 70 px;
+                text-decoration: blink;
+}
+}
+}
+#tab {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+overflow-y: auto;
+overflow-x: auto;
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr{
+:hover {background-color: rgb(229, 235, 230);
+color:  rgb(121, 2, 85);}
+
+}
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:  rgb(230, 202, 207);
+  color: white;
+  transition: background-color .5s;
+}
+}
