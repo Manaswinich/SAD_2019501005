@@ -18,28 +18,29 @@ class User(Base):
     password = Column(String(20))
     time = Column(TIMESTAMP, default=datetime.now(), nullable=False)
 
-
     # def __init__(usr, pwd):
     #     self.usr = usr
     #     self.pwd = pwd
     # self.time = time
 
+    # def __repr__(self):
+    #     return '<User %r is added.>' % (self.usr)
+
+
+class Book(Base):
+    __tablename__ = 'book'
+    isbn = Column(String(50), primary_key=True)
+    title = Column(String(50))
+    author = Column(String(50))
+    year = Column(String(50))
+
+    # def __init__(self, isbn, title, author, year):
+    #     self.isbn = isbn
+    #     self.title = title
+    #     self.author = author
+    #     self.year = year
     def __repr__(self):
-        return '<User %r is added.>' % (self.usr)
-
-
-# class Book(Base):
-#     __tablename__ = 'book'
-#     isbn = Column(String(50), primary_key=True)
-#     name = Column(String(50))
-#     title = Column(String(50))
-#     year = Column(Integer)
-
-#     def __init__(self, isbn, title, author, year):
-#         self.isbn = isbn
-#         self.title = title
-#         self.author = author
-#         self.year = year
+        return '<Book %r is added.>' % (isbn)
 
 
 # class admin(Base):
@@ -68,8 +69,8 @@ class User(Base):
 #     def __init__(usr, isbn):
 #         self.usr = usr
 #         self.isbn = isbn
-
 #     def __repr__(self):
 #         return '<User %r has reviewed the %r book.' % (self.usr, self.isbn)
+
 engine = create_engine(os.getenv("DATABASE_URL"))
 Base.metadata.create_all(engine)

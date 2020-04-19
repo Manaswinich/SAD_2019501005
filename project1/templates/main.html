@@ -14,8 +14,8 @@
 
     <h2 id="heading">Search for your favourite Book here!</h2>
     <ul class="lis">
-        <li><a href="http://127.0.0.1:5000/admin">Admin</a></li>
-        <li><a href="http://127.0.0.1:5000/logout">Logout</a></li>
+
+        <li><a href="{{url_for('logout')}}">Logout</a></li>
     </ul>
     <div class="search-container">
         <form>
@@ -23,10 +23,6 @@
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div>
-    <!-- <p class="dv">
-        <button name="reg" type="submit" onclick="window.location.href='http://127.0.0.1:5000/logout'" class="
-                registerbtn">Logout</button>
-    </p> -->
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 # from flask_session import Session
 import os
 from datetime import datetime
-from flask import Flask, session, render_template, request
+from flask import Flask, session, render_template, request, url_for, redirect
 from flask_session import Session
 from sqlalchemy import create_engine, desc
 from sqlalchemy.orm import scoped_session, sessionmaker
@@ -29,34 +29,33 @@ lis = []
 # data = []
 
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/")
+def homes():
+    # return render_template("home.html")
+    if session.get("data") is not None:
+        return render_template("main.html")
+    return redirect(url_for("home"))
+
+
+@app.route("/home")
 def home():
-    # if request.method == "GET":
     return render_template("home.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
 def reg():
-    # if session.get("lis") is None:
     session["lis"] = []
-    # session["data"] = []
     if request.method == "GET":
         return render_template("reg.html")
     elif request.method == "POST":
         fname = request.form.get("fname")
-        # session["lis"].append(fname)
         lname = request.form.get("lname")
-        # session["lis"].append(lname)
         gender = request.form.get("gender")
-        # session["lis"].append(gender)
         birthday = request.form.get("birthday")
-        # session["lis"].append(birthday)
         email = request.form.get("email")
-        # session["lis"].append(email)
+
         usr = request.form.get("usr")
-        session["lis"].append(usr)
         password = request.form.get("psw")
-        session["lis"].append(password)
         user = User(usr=usr, password=password, time=datetime.now())
         db.add(user)
         db.commit()
@@ -65,12 +64,30 @@ def reg():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    return render_template("login.html")
+
+    if request.method == "GET":
+        if session.get("data") is not None:
+            return render_template("main.html")
+        return render_template("login.html")
+    elif request.method == "POST":
+        usr = request.form.get("usr")
+        psw = request.form.get("psw")
+        user = db.query(User).get(usr)
+        # f = open("test.txt", "w+")
+        # f.write(user)
+        # print(user.usr)
+        if user is not None:
+            if usr == user.usr and psw == user.password:
+                session["data"] = usr
+                return render_template("main.html")
+        return redirect(url_for("reg"))
 
 
-@app.route("/logout", methods=["GET", "POST"])
+@app.route("/logout", methods=["GET"])
 def logout():
-    return render_template("logout.html")
+    session.clear()
+    return redirect(url_for('login'))
+    # return render_template("logout.html")
 
 
 @app.route("/admin")

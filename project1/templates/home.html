@@ -18,10 +18,9 @@
         <h3 class="ss">Please register youself if you are a new user or else login</h3>
     </div>
     <p class="dv">
-        <button name="reg" type="submit" onclick="window.location.href='http://127.0.0.1:5000/register'" class="
-            registerbtn">register</button>
-        <button name="login" type="submit" onclick="window.location.href='http://127.0.0.1:5000/login'"
-            class="registerbtn">login</button>
+        <button name="reg" type="submit" class="
+            registerbtn"> <a href="{{url_for('reg')}}" class="">register</a></button>
+        <button name="login" type="submit" <a href="{{url_for('login')}}" class="registerbtn">login</button>
     </p>
 </body>
 

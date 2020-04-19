@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form method="POST">
+    <form action="{{url_for('login')}}" method="POST">
         <div class="container">
             <h1 id="heading">Login</h1>
             <p id="para">Please fill in this form to login.</p>
@@ -19,12 +19,15 @@
 
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Password" name="psw" required>
+
+            <input type="submit" class="registerbtn">
+            <input type="reset" class="registerbtn">
+        </div>
     </form>
 
-    <input type="submit" class="registerbtn" onclick="window.location.href='http://127.0.0.1:5000/main'">
-    <input type="reset" class="registerbtn">
 
-    </div>
+
+
 </body>
 
 </html>
