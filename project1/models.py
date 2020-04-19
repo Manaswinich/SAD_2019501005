@@ -15,7 +15,7 @@ class User(Base):
     # gender = Column(String(50))
     # email = Column(String(120))
     usr = Column(String(50), primary_key=True)
-    password = Column(String(20))
+    password = Column(String(100))
     time = Column(TIMESTAMP, default=datetime.now(), nullable=False)
 
     # def __init__(usr, pwd):

@@ -7,7 +7,7 @@ from flask_session import Session
 from sqlalchemy import create_engine, desc
 from sqlalchemy.orm import scoped_session, sessionmaker
 from models import *
-
+import hashlib
 
 app = Flask(__name__)
 
@@ -56,6 +56,8 @@ def reg():
 
         usr = request.form.get("usr")
         password = request.form.get("psw")
+        # password = hashlib.md5(password.encode()).hexdigest()
+
         user = User(usr=usr, password=password, time=datetime.now())
         db.add(user)
         db.commit()
@@ -72,6 +74,7 @@ def login():
     elif request.method == "POST":
         usr = request.form.get("usr")
         psw = request.form.get("psw")
+        # password = hashlib.md5(psw.encode()).hexdigest()
         user = db.query(User).get(usr)
         # f = open("test.txt", "w+")
         # f.write(user)
