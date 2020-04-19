@@ -152,4 +152,9 @@ hr {
   -webkit-transition: background-color .5s;
   transition: background-color .5s;
 }
+
+a {
+  color: white;
+  background-color: white;
+}
 /*# sourceMappingURL=style.css.map */
