@@ -57,11 +57,14 @@ def reg():
         usr = request.form.get("usr")
         password = request.form.get("psw")
         # password = hashlib.md5(password.encode()).hexdigest()
-
-        user = User(usr=usr, password=password, time=datetime.now())
-        db.add(user)
-        db.commit()
-        return render_template("done.html", fname=fname, lname=lname, gender=gender, birthday=birthday, email=email)
+        user = db.query(User).get(usr)
+        if user is None:
+            user = User(usr=usr, password=password, time=datetime.now())
+            db.add(user)
+            db.commit()
+            return render_template("done.html", fname=fname, lname=lname, gender=gender, birthday=birthday, email=email)
+        else:
+            return render_template("reg.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
