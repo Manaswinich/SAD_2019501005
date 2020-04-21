@@ -64,7 +64,7 @@ def reg():
             db.commit()
             return render_template("done.html", fname=fname, lname=lname, gender=gender, birthday=birthday, email=email)
         else:
-            return render_template("reg.html")
+            return redirect(url_for('login'))
 
 
 @app.route("/login", methods=["GET", "POST"])
