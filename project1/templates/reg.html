@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="./static/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <script type="text/javascript" src="./static/js/reg.js"></script>
+    </script>
 </head>
 
 <body>
-    <form action="{{url_for('reg')}}" method="POST">
+    <form method="POST" action="{{url_for('reg')}}">
         <div class="container">
             <h1 id="heading">Register</h1>
             <p id="para">Please fill in this form to create an account.</p>
@@ -35,21 +36,22 @@
             <input type="date" placeholder:"dd/mm/yyyy" name="birthday">
             <br>
 
-            <label for="email" class"mail"><b>Email</b></label>
+            <label for="email"><b>Email</b></label>
             <br>
-            <input type="email" placeholder="Enter Email" name="email" required>
+            <input type="email" id="use" placeholder="Enter Email" name="email" required>
             <br>
 
             <label for="usr"><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="usr" required>
 
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Password" name="psw" required>
-            <input type="submit" class="registerbtn">
+            <input type="password" id="pass" placeholder="Password" name="psw" required>
+            <input id="sub" type="submit" class="registerbtn">
             <input type="reset" class="registerbtn">
-
+            <p id="error"></p>
         </div>
     </form>
+
 
 
 
