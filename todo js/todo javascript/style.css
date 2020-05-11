@@ -1,0 +1,21 @@
+.{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    height: 100%;
+    background-color:whitesmoke;
+}
+h1{
+    font-size: 3rem;
+    font-weight: 50;
+    margin:1rem 0 3rem;
+    text-align:center;
+    color:navy ;
+    font-family: 'Yatra One', cursive;
+}
+.styling{
+    font-size:800;
+    color: lightgreen;
+}
