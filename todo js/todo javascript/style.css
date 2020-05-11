@@ -73,7 +73,7 @@ h1{
     width: 350px;
     font-size:1.4rem;
 }
-.edit{
+.editButton{
     font-size: 1.4rem;
     margin:0.05rem;
     font-family:'Yatra One', cursive;
@@ -81,9 +81,10 @@ h1{
     outline: none;
     color: lightgreen;
     border: none;
+    cursor: pointer;
 }
 
-.delete{
+.deleteButton{
     font-size: 1.4rem;
     margin:0.075rem;
     font-family:'Yatra One', cursive;
@@ -91,4 +92,5 @@ h1{
     outline: none;
     color: navy;
     border: none;
+    cursor: pointer;
 }
