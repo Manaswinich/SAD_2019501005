@@ -1,4 +1,5 @@
 const add = document.querySelector(".add");
+const errorMessage = document.querySelector(".error");
 var input = document.querySelector(".input");
 const container = document.querySelector(".container");
 
@@ -7,16 +8,21 @@ class item {
         this.createDiv(itemName);
     }
     createDiv(itemName) {
+
+        var checkBox = document.createElement('input');
+        checkBox.setAttribute('type', 'checkbox');
+        checkBox.classList.add('checkmark');
+
         var input = document.createElement('input');
         input.value = itemName;
         input.disabled = true;
         input.classList.add('item_input');
         input.type = "text";
-        console.log("abc");
+
 
         var itemBox = document.createElement('div');
         itemBox.classList.add('item');
-        console.log("def");
+
 
         var editButton = document.createElement('button');
         editButton.innerHTML = "Edit";
@@ -33,6 +39,7 @@ class item {
 
         container.appendChild(itemBox);
 
+        itemBox.appendChild(checkBox);
         itemBox.appendChild(input);
         itemBox.appendChild(editButton);
         itemBox.appendChild(deleteButton);
@@ -54,6 +61,7 @@ class item {
 }
 
 window.addEventListener('keydown', (e) => {
+    errorMessage.style.display = "none";
     if (e.which == 13) {
         check();
     }
@@ -62,6 +70,10 @@ function check() {
     if (input.value != "") {
         new item(input.value);
         input.value = "";
+    } else {
+        errorMessage.style.display = "block";
+        console.log("ppppp");
+
     }
 }
 add.addEventListener('click', check);
