@@ -9,15 +9,23 @@ class item {
     }
     createDiv(itemName) {
 
-        var checkBox = document.createElement('input');
-        checkBox.setAttribute('type', 'checkbox');
-        checkBox.classList.add('checkmark');
+
 
         var input = document.createElement('input');
         input.value = itemName;
         input.disabled = true;
         input.classList.add('item_input');
         input.type = "text";
+
+        var checkBox = document.createElement('input');
+        checkBox.setAttribute('type', 'checkbox');
+
+        var strike = document.createElement('label');
+
+        checkBox.addEventListener('click', () => this.strikeIt());
+
+
+
 
 
         var itemBox = document.createElement('div');
@@ -40,20 +48,25 @@ class item {
         container.appendChild(itemBox);
 
         itemBox.appendChild(checkBox);
+        itemBox.appendChild(strike);
         itemBox.appendChild(input);
         itemBox.appendChild(editButton);
         itemBox.appendChild(deleteButton);
-
+        console.log(itemBox);
 
 
 
     }
+    strikeIt() {
+    }
+
     edit(input) {
         input.disabled = !input.disabled;
 
     }
 
     delete(item) {
+        console.log(item)
         container.removeChild(item);
     }
 

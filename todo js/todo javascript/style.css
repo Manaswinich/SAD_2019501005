@@ -183,3 +183,8 @@ h1{
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+
+input[type=checkbox]:checked + label.strikethrough{
+  text-decoration: line-through;
+}
