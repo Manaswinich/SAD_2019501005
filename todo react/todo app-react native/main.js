@@ -40,7 +40,7 @@ export default class Main extends React.Component {
         );
     }
 
-    addNote(this) {
+    addNote() {
         if (this.state.noteText) {
             var d = new Date();
             this.state.noteArray.push({
