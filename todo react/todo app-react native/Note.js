@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     noteDelete: {
         position: 'absolute',
         justifyContent: 'center',
-        alignItems: 'center',,
+        alignItems: 'center',
         backgroundColor: '#2980b9',
         padding: 10,
         top: 10,
