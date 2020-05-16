@@ -11,10 +11,10 @@ export default class Main extends React.Component {
     }
     render() {
 
-        let notes = this.state.noteArray.map(val, key)=> {
+        let notes = this.state.noteArray.map((val, key) => {
             return <Note key={key} keyval={key} val={val}
-                deleteMethod{() => this.deleteNote(key)} />
-        }
+                deleteMethod={() => this.deleteNote(key)} />
+        });
 
         return (
             <View style={styles.container}>
@@ -22,19 +22,35 @@ export default class Main extends React.Component {
                     <Text style={styles.headerText}>TODO TASKS</Text>
                 </View>
                 <ScrollView style={styles.scrollContainer}>
+                    {notes}
                 </ScrollView>
                 <View style={styles.footer}>
                     <TextInput
                         style={styles.textInput}
+                        onChangeText={(noteText) => this.setState({ noteText })}
+                        value={this.state.noteText}
                         placeholder='Write up here'
                         placeholderTextColor='white'>
                     </TextInput>
                 </View>
-                <TouchableOpacity style={Styles.addButton}>
+                <TouchableOpacity onPress={this.addNote.bind(this)} style={Styles.addButton}>
                     <Text style={style.addButtonText}>+</Text>
                 </TouchableOpacity>
-            </View>
+            </View >
         );
+
+        addNote(){
+            if (this.state.noteText) {
+                var d = new Date();
+                this.state.noteArray.push({
+                    'date': d.getFullYear() +
+                        "/" + (d.getMonth() + 1) +
+                        "/" + d.getDate(),
+                });
+                this.setState({ this.state.noteArray });
+                this.setState({ noteText: '' });
+            }
+        }
     }
 }
 
