@@ -33,26 +33,28 @@ export default class Main extends React.Component {
                         placeholderTextColor='white'>
                     </TextInput>
                 </View>
-                <TouchableOpacity onPress={this.addNote.bind(this)} style={Styles.addButton}>
-                    <Text style={style.addButtonText}>+</Text>
+                <TouchableOpacity onPress={this.addNote.bind(this)} style={styles.addButton}>
+                    <Text style={styles.addButtonText}>+</Text>
                 </TouchableOpacity>
             </View >
         );
+    }
 
-        addNote(){
-            if (this.state.noteText) {
-                var d = new Date();
-                this.state.noteArray.push({
-                    'date': d.getFullYear() +
-                        "/" + (d.getMonth() + 1) +
-                        "/" + d.getDate(),
-                });
-                this.setState({ this.state.noteArray });
-                this.setState({ noteText: '' });
-            }
+    addNote(this) {
+        if (this.state.noteText) {
+            var d = new Date();
+            this.state.noteArray.push({
+                'date': d.getFullYear() +
+                    "/" + (d.getMonth() + 1) +
+                    "/" + d.getDate(),
+                'note': this.state.noteText
+            });
+            this.setState({ noteArray: this.state.noteArray });
+            this.setState({ noteText: '' });
         }
     }
 }
+
 
 const styles = StyleSheet.create({
     container: {
