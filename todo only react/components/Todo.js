@@ -36,6 +36,13 @@ export default class Todo extends React.Component {
         })
     }
 
+    handleDel = id => {
+        this.setState({
+            todos: this.setState.filter(todo => todo.id !== id)
+        });
+    };
+
+
     render() {
         let todos = []
 
@@ -50,7 +57,8 @@ export default class Todo extends React.Component {
             <div>
                 <TodoForm onSubmit={this.addTodo} />
                 {todos.map(todo => (
-                    <Strike key={todo.id} toggleComplete={() => this.toggleComplete(todo.id)} todo={todo} />
+                    <Strike key={todo.id} toggleComplete={() => this.toggleComplete(todo.id)}
+                        onDelete={() => this.handleDel(todo.id)} todo={todo} />
                 ))}
                 <div>Tasks left:{this.state.todos.filter(todo => !todo.complete).length}</div>
                 <div>
