@@ -20,16 +20,22 @@ export default class TodoForm extends React.Component {
             text: this.state.text,
             complete: false
         });
+        this.setState({
+            text: ""
+        });
     }
 
     render() {
-        <form>
-            return <input
-                name="text"
-                value={this.state.text}
-                onChange={this.handleChange}
-                placeholder="Write up here"
-            />;
+        return (
+            <form>
+                <input
+                    name="text"
+                    value={this.state.text}
+                    onChange={this.handleChange}
+                    placeholder="Write up here"
+                />
+                <button onClick={this.handleSubmit}>Add Task</button>
             </form>
+        );
     }
 }
