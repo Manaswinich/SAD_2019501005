@@ -1,0 +1,190 @@
+.{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    height: 100%;
+    background-color:whitesmoke;
+}
+h1{
+    font-size: 3rem;
+    font-weight: 50;
+    margin:1rem 0 3rem;
+    text-align:center;
+    color:navy ;
+    font-family: 'Yatra One', cursive;
+}
+.styling{
+    font-size:800;
+    color: lightgreen;
+}
+.input_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.input_div .input{
+    padding: 0.5rem 1rem;
+    height:50px;
+    outline:none;
+    background-color: white;
+    width: 450px;
+    font-size: 1.15rem;
+    margin: 0.25rem;
+    border-radius: 25px;
+    border: none;
+
+}
+.input_div .add{
+    height: 50px;
+    width:50px;
+    border-radius:25px;
+    outline: none;
+    border:none;
+    color:white;
+    margin: 0.25px;
+    background-color:palegreen ;
+    cursor: pointer;
+}
+.input_div .add:hover{
+    opacity: 0.7;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top:2rem;
+}
+.item{
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 4px solid black;
+}
+
+.item_input{
+    background:none;
+    outline: none;
+    color:burlywood;
+    border:none;
+    width: 350px;
+    font-size:1.4rem;
+}
+.editButton{
+    font-size: 1.4rem;
+    margin:0.05rem;
+    font-family:'Yatra One', cursive;
+    background:none;
+    outline: none;
+    color: lightgreen;
+    border: none;
+    cursor: pointer;
+}
+
+.deleteButton{
+    font-size: 1.4rem;
+    margin:0.075rem;
+    font-family:'Yatra One', cursive;
+    background:none;
+    outline: none;
+    color: navy;
+    border: none;
+    cursor: pointer;
+}
+
+.message{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+.message .error{
+    display: none;
+    padding: 0.5rem 1rem;
+    height:30px;
+    outline:none;
+    background-color: lightcoral;
+    width: 450px;
+    font-size: 1.15rem;
+    margin: 0.25rem;
+    /* border-radius: 25px; */
+    border: none;
+
+
+}
+
+.check_box {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.check_box input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+
+.check_box:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+
+.check_box input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+
+.check_box input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+.check_box .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+input[type=checkbox]:checked + label.strikethrough{
+  text-decoration: line-through;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My registration page</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script type="text/javascript" src="./static/js/reg.js"></script>
+    </script>
+</head>
+
+<body>
+    <form method="POST" action="{{url_for('reg')}}">
+        <div class="container">
+            <h1 id="heading">Register</h1>
+            <p id="para">Please fill in this form to create an account.</p>
+            <hr>
+
+            <label for="fname"><b>First Name</b></label>
+            <input type="text" placeholder="Enter First Name" name="fname" required>
+
+            <label for="lname"><b>Last Name</b></label>
+            <input type="text" placeholder="Enter Last Name" name="lname" required>
+
+            <p><b>Gender</b>:</p>
+            <input type="radio" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" name="gender" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" name="gender" value="other">
+            <label for="other">Other</label>
+            <br>
+
+            <label for="birthday"><b>Date of Birth</b></label><br>
+            <input type="date" placeholder:"dd/mm/yyyy" name="birthday">
+            <br>
+
+            <label for="email"><b>Email</b></label>
+            <br>
+            <input type="email" id="use" placeholder="Enter Email" name="email" required>
+            <br>
+
+            <label for="usr"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="usr" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" id="pass" placeholder="Password" name="psw" required>
+            <input id="sub" type="submit" class="registerbtn">
+            <input type="reset" class="registerbtn">
+            <p id="error"></p>
+        </div>
+    </form>
+
+
+
+
+</body>
+
+</html>

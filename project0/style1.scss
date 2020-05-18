@@ -6,11 +6,15 @@ $padding: 0 px ;
     margin-left: 5px;
 }
 }
+.font-basic{
+    font-display: initial;
+}
 #heading{
     font-family:serif;
     font-style: oblique;
     font-size:40px;
     text-align: center;
+    @extend .font-basic;
 }
 .arti1{
 background-color: rgb(226, 204, 221);
