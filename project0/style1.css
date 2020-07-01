@@ -5,6 +5,10 @@
   }
 }
 
+.font-basic, #heading {
+  font-display: initial;
+}
+
 #heading {
   font-family: serif;
   font-style: oblique;
